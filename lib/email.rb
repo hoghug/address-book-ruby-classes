@@ -1,7 +1,3 @@
-class Email
-  attr_reader :address
+class Email < Record
 
-  def initialize(address)
-    @address = address
-  end
 end

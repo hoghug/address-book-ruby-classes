@@ -9,13 +9,13 @@ class Contact
     @@all_contacts = []
   end
 
-  def Contact.create(name)
+  def Contact.create name
     new_contact = Contact.new(name)
     new_contact.save
     new_contact
   end
 
-  def initialize(name)
+  def initialize name
     if name =~ /\s/
       @first_name = name.split(' ')[0]
       @last_name = name.split(' ')[1]
@@ -36,17 +36,24 @@ class Contact
     @first_name + ' ' + @last_name
   end
 
-  def add_phone(phone)
+  def add_phone phone
     @phones << phone
   end
 
-  def add_email(email)
+  def add_email email
     @emails << email
   end
 
-  def add_address(address)
+  def add_address address
     @addresses << address
   end
+end
 
+class Record
+  attr_reader :content
+
+  def initialize content
+    @content = content
+  end
 end
 

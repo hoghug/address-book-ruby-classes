@@ -56,5 +56,12 @@ describe Phone do
   end
 end
 
-
+describe Address do
+  describe '#format' do
+    it 'returns the formatted address' do
+      test_address = Address.new('1955 SW 5th Ave Portland, OR 97201')
+      test_address.format.should eq "1955 SW 5th Ave\nPortland, OR 97201"
+    end
+  end
+end
 
